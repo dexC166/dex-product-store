@@ -1,6 +1,6 @@
-import { EditIcon, Trash2Icon } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useProductStore } from "../store/useProductStore";
+import { EditIcon, Trash2Icon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useProductStore } from '../store/useProductStore';
 
 function ProductCard({ product }) {
   const { deleteProduct } = useProductStore();
@@ -18,11 +18,20 @@ function ProductCard({ product }) {
       <div className="card-body">
         {/* PRODUCT INFO */}
         <h2 className="card-title text-lg font-semibold">{product.name}</h2>
-        <p className="text-2xl font-bold text-primary">${Number(product.price).toFixed(2)}</p>
+        <p className="text-2xl font-bold text-primary">
+          $
+          {Number(product.price).toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
+        </p>
 
         {/* CARD ACTIONS */}
         <div className="card-actions justify-end mt-4">
-          <Link to={`/product/${product.id}`} className="btn btn-sm btn-info btn-outline">
+          <Link
+            to={`/product/${product.id}`}
+            className="btn btn-sm btn-info btn-outline"
+          >
             <EditIcon className="size-4" />
           </Link>
 

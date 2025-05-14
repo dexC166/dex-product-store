@@ -1,11 +1,11 @@
-import { Link, useResolvedPath } from "react-router-dom";
-import { ShoppingBagIcon, ShoppingCartIcon } from "lucide-react";
-import ThemeSelector from "./ThemeSelector";
-import { useProductStore } from "../store/useProductStore";
+import { Link, useResolvedPath } from 'react-router-dom';
+import { ShoppingBagIcon, ShoppingCartIcon } from 'lucide-react';
+import ThemeSelector from './ThemeSelector';
+import { useProductStore } from '../store/useProductStore';
 
 function Navbar() {
   const { pathname } = useResolvedPath();
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === '/';
 
   const { products } = useProductStore();
 
@@ -22,7 +22,7 @@ function Navbar() {
                   className="font-semibold font-mono tracking-widest text-2xl 
                     bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
                 >
-                  POSGRESTORE
+                  Dex-Product-Store
                 </span>
               </div>
             </Link>

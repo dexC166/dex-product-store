@@ -177,6 +177,10 @@ npm run dev
 
 ---
 
+## <a name="deployment">🚢 Deployment</a>
+
+---
+
 ## <a name="about-me">👨‍💻 About Me</a>
 
 Hi there! I’m **Dayle Cortes**, an American remote Full-Stack Software Engineer based in Florida.
@@ -188,7 +192,7 @@ Hi there! I’m **Dayle Cortes**, an American remote Full-Stack Software Enginee
 
 ---
 
-## <a name="acknowledgements">🙏 Acknowledgements</a>
+## <a name="acknowledgments">🙏 Acknowledgments</a>
 
 Thanks again to **burakorkmez (codesistency)** for the detailed video tutorials, clear guidance, and in-depth walkthroughs on this PERN Stack Project.
 
