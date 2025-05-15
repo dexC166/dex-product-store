@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="Finaldomainname" target="_blank">
+    <a href="https://dex-product-store.onrender.com/" target="_blank">
       <img src="./frontend/public/project-banner.png" alt="Project Banner">
     </a>
   <br />
