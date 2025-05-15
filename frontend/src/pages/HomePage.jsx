@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useProductStore } from "../store/useProductStore";
-import { PackageIcon, PlusCircleIcon, RefreshCwIcon } from "lucide-react";
-import ProductCard from "../components/ProductCard";
-import AddProductModal from "../components/AddProductModal";
+import { useEffect } from 'react';
+import { useProductStore } from '../store/useProductStore';
+import { PackageIcon, PlusCircleIcon, RefreshCwIcon } from 'lucide-react';
+import ProductCard from '../components/ProductCard';
+import AddProductModal from '../components/AddProductModal';
 
 function HomePage() {
   const { products, loading, error, fetchProducts } = useProductStore();
@@ -16,7 +16,9 @@ function HomePage() {
       <div className="flex justify-between items-center mb-8">
         <button
           className="btn btn-primary"
-          onClick={() => document.getElementById("add_product_modal").showModal()}
+          onClick={() =>
+            document.getElementById('add_product_modal').showModal()
+          }
         >
           <PlusCircleIcon className="size-5 mr-2" />
           Add Product

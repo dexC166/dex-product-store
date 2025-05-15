@@ -1,6 +1,6 @@
-import { PaletteIcon } from "lucide-react";
-import { THEMES } from "../constants";
-import { useThemeStore } from "../store/useThemeStore";
+import { PaletteIcon } from 'lucide-react';
+import { THEMES } from '../constants';
+import { useThemeStore } from '../store/useThemeStore';
 
 function ThemeSelector() {
   const { theme, setTheme } = useThemeStore();
@@ -26,8 +26,8 @@ function ThemeSelector() {
                 w-full px-4 py-3 rounded-xl flex items-center gap-3 transition-colors
                 ${
                   theme === themeOption.name
-                    ? "bg-primary/10 text-primary"
-                    : "hover:bg-base-content/5"
+                    ? 'bg-primary/10 text-primary'
+                    : 'hover:bg-base-content/5'
                 }
               `}
             onClick={() => setTheme(themeOption.name)}
@@ -38,7 +38,11 @@ function ThemeSelector() {
             {/* THEME PREVIEW COLORS */}
             <div className="ml-auto flex gap-1">
               {themeOption.colors.map((color, i) => (
-                <span key={i} className="size-2 rounded-full" style={{ backgroundColor: color }} />
+                <span
+                  key={i}
+                  className="size-2 rounded-full"
+                  style={{ backgroundColor: color }}
+                />
               ))}
             </div>
           </button>
