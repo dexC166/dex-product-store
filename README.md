@@ -160,15 +160,27 @@ ARCJET_ENV=development
 ### 2. Start the Backend (API)
 
 ```bash
+cd backend
+npm install
 npm run dev
 ```
+
+By default, the Express server will run on http://localhost:3000.
 
 ### 3. Start the Frontend
 
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
+
+The React app will be served at http://localhost:5173 and proxy API requests to your backend.
+
+### 4. Open the app
+
+Navigate to http://localhost:5173 in your browser.
+You can now create, edit, and delete notes via the UI!
 
 ---
 
@@ -180,6 +192,8 @@ npm run dev
 ---
 
 ## <a name="deployment">🚢 Deployment</a>
+
+The entire app is hosted on Render.com as two coordinated services **`Backend (Express API)`**, and **`Frontend (React + Vite)`**. Whenever you push to your main branch, Render will automatically rebuild and redeploy both services, and your React app will talk to the live Express API.
 
 ---
 
