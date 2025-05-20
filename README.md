@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="postgresql" />
     <img src="https://img.shields.io/badge/-Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" />
     <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" />
-    <img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node.js" />
+    <img src="https://img.shields.io/badge/-Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node.js" />
   </div>
 
 </div>
@@ -17,10 +17,12 @@
 <div align="center">
    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
     <img src="https://img.shields.io/badge/-Arcjet-000000?style=for-the-badge&logo=arcjet&logoColor=white" alt="arcjet" />
-    <img src="https://img.shields.io/badge/-Zustand-ff6b6b?style=for-the-badge&logo=zustand&logoColor=white" alt="zustand" />
     <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="vite" />
+    <img src="https://img.shields.io/badge/-Zustand-ff6b6b?style=for-the-badge&logo=zustand&logoColor=white" alt="zustand" />
     <img src="https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="eslint" />
-    <img src="https://img.shields.io/badge/-DaisyUI-f59f00?style=for-the-badge&logo=daisyui&logoColor=white" alt="daisyui" />
+    <img src="https://img.shields.io/badge/-Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white" alt="Nodemon" />
+    <img src="https://img.shields.io/badge/-Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios" />
+    <img src="https://img.shields.io/badge/-DaisyUI-1AD1A5?style=for-the-badge&logo=daisyui&logoColor=white" alt="daisyui" />
 </div>
 
   <h1 align="center">🛒 Dex-Product-Store</h1>
