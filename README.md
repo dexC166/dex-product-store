@@ -76,7 +76,8 @@ The journey of creating this app was guided by the teachings, best practices, an
   "keywords": [],
   "author": "",
   "type": "module",
-  "license": "ISC",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
   "description": "",
   "dependencies": {
     "@arcjet/node": "^1.0.0-beta.1",
