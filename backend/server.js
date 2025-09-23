@@ -24,8 +24,8 @@ app.use(
 ); // helmet is a security middleware that helps you protect your app by setting various HTTP headers
 app.use(morgan('dev')); // log the requests
 
-// apply arcjet rate-limit to all routes
-app.use(async (req, res, next) => {
+// apply arcjet rate-limit ONLY to API routes (avoid /health and static files)
+const arcjetMiddleware = async (req, res, next) => {
   try {
     const decision = await aj.protect(req, {
       requested: 1, // specifies that each request consumes 1 token
@@ -57,18 +57,18 @@ app.use(async (req, res, next) => {
     console.log('Arcjet error', error);
     next(error);
   }
-});
+};
+
+app.use('/api', arcjetMiddleware);
 
 app.use('/api/products', productRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-  // server our react app
-  app.use(express.static(path.join(__dirname, '/frontend/dist')));
+// Health check endpoint for Fly.io and Docker healthcheck
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-  });
-}
+// Note: Frontend is deployed on Vercel; do not attempt to serve React build from Fly
 
 async function initDB() {
   try {
@@ -87,6 +87,8 @@ async function initDB() {
     console.log('Error initDB', error);
   }
 }
+
+// routes already mounted above
 
 initDB().then(() => {
   app.listen(PORT, () => {

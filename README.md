@@ -194,7 +194,12 @@ You can now create, edit, and delete notes via the UI!
 
 ## <a name="deployment">🚢 Deployment</a>
 
-The entire app is hosted on Render.com as two coordinated services **`Backend (Express API)`**, and **`Frontend (React + Vite)`**. Whenever you push to your main branch, Render will automatically rebuild and redeploy both services, and your React app will talk to the live Express API.
+Production setup:
+
+- Backend: Fly.io (`https://dex-product-store-backend.fly.dev`), Dockerized Node/Express, Neon Postgres, Arcjet.
+- Frontend: Vercel, Vite build, `frontend/vercel.json` rewrites `/api/*` to Fly backend.
+
+Follow the step-by-step `DEPLOYMENT_GUIDE.md` in this repo to deploy.
 
 ---
 
