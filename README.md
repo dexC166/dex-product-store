@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://dex-product-store.onrender.com/" target="_blank">
+    <a href="https://dex-product-store.vercel.app/" target="_blank">
       <img src="./frontend/public/project-banner.png" alt="Project Banner">
     </a>
   <br />
@@ -65,20 +65,14 @@ The journey of creating this app was guided by the teachings, best practices, an
 
 ```json
 {
-  "name": "dex-product-store",
+  "name": "dex-product-store-backend",
   "version": "1.0.0",
-  "main": "backend/server.js",
-  "scripts": {
-    "dev": "nodemon backend/server.js",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend/server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "type": "module",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE.md",
-  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "@arcjet/node": "^1.0.0-beta.1",
     "@neondatabase/serverless": "^0.10.4",
@@ -87,9 +81,6 @@ The journey of creating this app was guided by the teachings, best practices, an
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
   }
 }
 ```
@@ -147,15 +138,13 @@ The journey of creating this app was guided by the teachings, best practices, an
 Create a `.env` file in the root with the following:
 
 ```env
-PORT=3000
-
-PGUSER=
-PGPASSWORD=
-PGHOST=
-PGDATABASE=
-
-ARCJET_KEY=
-ARCJET_ENV=development
+PGHOST=Neon-host
+PGDATABASE=Neon-database
+PGUSER=Neon-user
+PGPASSWORD=Neon-password
+ARCJET_KEY=Arcjet-API-key
+PORT=8080
+NODE_ENV=production
 ```
 
 ### 2. Start the Backend (API)
@@ -166,7 +155,7 @@ npm install
 npm run dev
 ```
 
-By default, the Express server will run on http://localhost:3000.
+By default, the Express server will run on http://localhost:3000 (or port 8080 in production).
 
 ### 3. Start the Frontend
 
@@ -181,7 +170,7 @@ The React app will be served at http://localhost:5173 and proxy API requests to 
 ### 4. Open the app
 
 Navigate to http://localhost:5173 in your browser.
-You can now create, edit, and delete notes via the UI!
+You can now create, edit, and delete products via the UI!
 
 ---
 
