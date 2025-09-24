@@ -29,7 +29,7 @@
 
 This is my personal project, **Dex-Product-Store**, built from the ground up to deeply understand the **PERN** (PostgreSQL, Express, React, Node) stack and put modern full-stack skills into practice.
 
-The journey of creating this app was guided by the teachings, best practices, and source inspiration from [burakorkmez (codesistency on YouTube)](https://www.youtube.com/@codesistency), huge thanks for the lesson and inspiration! 🙌
+While I started this journey following the excellent teachings and guidance from [burakorkmez (codesistency on YouTube)](https://www.youtube.com/@codesistency), I quickly delved off the beaten path to make this app truly mine. Through extensive experimentation, customizations, and iterative improvements, I've transformed the original tutorial into a unique project that reflects my own learning and growth. 🚀
 
 ---
 
@@ -57,7 +57,7 @@ The journey of creating this app was guided by the teachings, best practices, an
 - **`DB Integration`**: PostgreSQL managed via `@neondatabase/serverless`.
 - **`DX`**: Structured error handling on both frontend and backend for real-world readiness and great dev experience.
 - **`Front-to-Back Ownership`**: Every line written was part of my step-by-step growth.
-- **`Inspired by Codesistency`**: A full hands-on classroom experience in building PERN apps.
+- **`Beyond Tutorial Learning`**: Started with codesistency's guidance but evolved into my own unique implementation through experimentation and customization.
 
 ---
 
@@ -205,13 +205,14 @@ Hi there! I’m **Dayle Cortes**, an American remote Full-Stack Software Enginee
 
 ## <a name="acknowledgments">🙏 Acknowledgments</a>
 
-Thanks again to **burakorkmez (codesistency)** for the detailed video tutorials, clear guidance, and in-depth walkthroughs on this PERN Stack Project.
+Thanks to **burakorkmez (codesistency)** for the excellent foundation and detailed video tutorials that got me started on this PERN Stack journey. The initial guidance was invaluable, and the real learning happened when I took those concepts and made them my own through experimentation and customization!
 
 ---
 
 ## <a name="note">📌 Note</a>
 
-This app was originally built by following @codesistency’s YouTube tutorial for learning and inspiration.  
-The project was developed entirely in my local IDE (outside of GitHub) without initializing git, and I’ve reconstructed the commit history solely to reflect a realistic development flow and demonstrate my understanding of fullstack architecture and recent modifications, not as a record of the actual chronological build.
+This app began as a learning journey following @codesistency's YouTube tutorial, but quickly evolved into my own unique project through extensive experimentation and customization. The real growth happened when I moved beyond the tutorial and started making it truly mine!
+
+The project was developed entirely in my local IDE (outside of GitHub) without initializing git, and I've reconstructed the commit history solely to reflect a realistic development flow and demonstrate my understanding of fullstack architecture and recent modifications, not as a record of the actual chronological build.
 
 ---
