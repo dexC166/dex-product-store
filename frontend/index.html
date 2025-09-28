@@ -1,13 +1,202 @@
+<!--
+  =============================================================================
+  DEX Product Store - Main HTML Entry Point
+  =============================================================================
+  
+  This is the main HTML file for the DEX Product Store React application.
+  It serves as the entry point for the Vite build system and provides the
+  foundation for the Single Page Application (SPA) architecture.
+  
+  Architecture Context:
+  - Frontend: React 18 SPA with Vite build system
+  - Backend: Express.js API deployed on Fly.io (separate service)
+  - Database: Neon PostgreSQL (serverless, external to both frontend and backend)
+  - Deployment: Frontend on Vercel, Backend on Fly.io (microservices architecture)
+  
+  Vite Integration:
+  - Vite uses this HTML file as the template for both development and production
+  - During development: Vite serves this file with hot module replacement
+  - During build: Vite processes this file and injects bundled assets
+  - The script tag is processed by Vite to load the React application
+  
+  Why this approach: Modern React applications use a single HTML file that
+  serves as the container for the entire SPA. This allows for:
+  - Client-side routing (React Router handles navigation)
+  - Dynamic content rendering (React manages the DOM)
+  - Optimized asset loading (Vite handles bundling and optimization)
+  - SEO-friendly URLs (Vercel handles routing for production)
+-->
+
 <!DOCTYPE html>
+<!--
+  HTML5 Document Type Declaration
+  ================================
+  
+  Specifies that this document uses HTML5 markup language.
+  This is the standard for modern web applications and provides:
+  - Better semantic elements and accessibility features
+  - Improved form validation and input types
+  - Enhanced multimedia support (video, audio, canvas)
+  - Better mobile device support and responsive design
+-->
 <html lang="en">
+  <!--
+    Language Declaration
+    ====================
+    
+    Declares the primary language of the document as English.
+    This is important for:
+    - Screen readers and accessibility tools
+    - Search engine optimization (SEO)
+    - Browser language detection and spell checking
+    - Internationalization (i18n) support if needed in the future
+  -->
   <head>
+    <!--
+      Document Head Section
+      =====================
+      
+      Contains metadata about the document that is not displayed
+      to users but is essential for proper rendering, SEO, and
+      browser behavior. This section is processed by browsers
+      and search engines before the body content.
+    -->
+
+    <!--
+      Character Encoding Declaration
+      ==============================
+      
+      Specifies UTF-8 character encoding, which is the standard
+      for modern web applications. UTF-8 supports all Unicode
+      characters, making it essential for:
+      - International character support (emojis, accented characters)
+      - Proper rendering of special symbols and icons
+      - Consistent text display across different browsers and devices
+      - Future-proofing for internationalization
+    -->
     <meta charset="UTF-8" />
+
+    <!--
+      Favicon Configuration
+      =====================
+      
+      Sets the favicon (favorite icon) that appears in browser tabs,
+      bookmarks, and browser history. The shopping cart icon reinforces
+      the e-commerce theme of the application.
+      
+      Icon Details:
+      - Type: SVG (Scalable Vector Graphics) for crisp display at any size
+      - Path: /shopping-cart.svg (located in public directory)
+      - Usage: Appears in browser tabs, bookmarks, and browser history
+      - Theme: Matches the shopping cart icon used in the Navbar component
+      
+      Why SVG: Vector graphics scale perfectly at any size, ensuring
+      the favicon looks crisp on high-DPI displays and various screen sizes.
+    -->
     <link rel="icon" type="image/svg+xml" href="/shopping-cart.svg" />
+
+    <!--
+      Viewport Meta Tag
+      ==================
+      
+      Essential for responsive web design and mobile optimization.
+      This tag tells the browser how to control the page's dimensions
+      and scaling on different devices.
+      
+      Configuration:
+      - width=device-width: Sets the viewport width to match the device width
+      - initial-scale=1.0: Sets the initial zoom level to 100%
+      
+      Why this matters:
+      - Without this tag, mobile browsers would render the page as if it were
+        on a desktop, making text tiny and requiring horizontal scrolling
+      - Enables responsive design to work properly on mobile devices
+      - Essential for the Tailwind CSS responsive utilities to function correctly
+      - Improves user experience on smartphones and tablets
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Page Title
+      ===========
+      
+      Sets the title that appears in the browser tab, bookmarks,
+      and search engine results. This is crucial for SEO and user
+      experience.
+      
+      SEO Benefits:
+      - Appears in search engine results as the clickable headline
+      - Used by social media platforms when sharing links
+      - Helps users identify the page when multiple tabs are open
+      - Important for browser history and bookmarks
+      
+      Branding: "Dex Product Store" clearly identifies the application
+      and its purpose as an e-commerce platform.
+    -->
     <title>Dex Product Store</title>
   </head>
+
   <body>
+    <!--
+      Document Body Section
+      =====================
+      
+      Contains the visible content of the web page. In a React SPA,
+      this section is minimal because React manages the DOM dynamically.
+    -->
+
+    <!--
+      React Root Element
+      ===================
+      
+      This div serves as the mounting point for the entire React application.
+      React will replace the contents of this div with the rendered
+      components when the application loads.
+      
+      ID Convention:
+      - "root" is the standard convention for React applications
+      - Matches the ID used in main.jsx: document.getElementById('root')
+      - This is the entry point where React takes control of the DOM
+      
+      React Integration:
+      - React Router will handle client-side navigation within this container
+      - All components (Navbar, HomePage, ProductPage, etc.) will be rendered here
+      - The div itself remains, but its contents are managed by React
+      - This enables the Single Page Application (SPA) behavior
+    -->
     <div id="root"></div>
+
+    <!--
+      Vite Module Script
+      ===================
+      
+      This script tag loads the main React application entry point.
+      Vite processes this during both development and production builds.
+      
+      Module Type:
+      - type="module": Enables ES6 module syntax (import/export)
+      - Required for modern JavaScript and React applications
+      - Allows the use of import statements in main.jsx
+      
+      Source Path:
+      - /src/main.jsx: Points to the main entry point of the React app
+      - Vite resolves this path and processes the file
+      - During development: Serves the file with hot module replacement
+      - During production: Bundles and optimizes the file
+      
+      Vite Processing:
+      - Development: Vite serves the file directly with HMR (Hot Module Replacement)
+      - Production: Vite bundles, minifies, and optimizes the file
+      - The script tag is automatically updated with the correct path
+      
+      Application Flow:
+      1. Browser loads this HTML file
+      2. Browser encounters this script tag
+      3. Vite serves/processes main.jsx
+      4. main.jsx imports React and App components
+      5. React renders the application into the #root div
+      6. The SPA is now running and ready for user interaction
+    -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

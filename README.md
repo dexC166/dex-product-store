@@ -58,6 +58,8 @@ While I started this journey following the excellent teachings and guidance from
 - **`DX`**: Structured error handling on both frontend and backend for real-world readiness and great dev experience.
 - **`Front-to-Back Ownership`**: Every line written was part of my step-by-step growth.
 - **`Beyond Tutorial Learning`**: Started with codesistency's guidance but evolved into my own unique implementation through experimentation and customization.
+- **`📚 Production-Ready Documentation`**: Comprehensive JSDoc comments throughout the entire codebase with mentoring tone, explaining the "why" behind every code decision.
+- **`🎓 Educational Codebase`**: Context-aware documentation that serves as a learning resource for understanding modern full-stack development patterns.
 
 ---
 
@@ -176,8 +178,21 @@ You can now create, edit, and delete products via the UI!
 
 ## <a name="documentation">📚 Documentation</a>
 
+### 📖 Code Documentation
+
+This project features **comprehensive JSDoc comments** throughout the entire codebase, providing:
+
+- **`Mentoring Tone`**: Comments written as if mentoring a junior developer, explaining the "why" behind code decisions
+- **`Context-Aware Documentation`**: Comments that reference actual usage patterns and cross-component relationships
+- **`Production-Ready Standards`**: Professional-grade documentation suitable for team collaboration
+- **`Educational Value`**: Detailed explanations of architectural decisions, design patterns, and best practices
+- **`Cross-Referenced`**: Links between related components, backend services, and configuration files
+
+### 📋 Project Documentation
+
 - 🛠️ [Architecture Overview](./architecture.md)
 - 🔄 [User Flow Diagram](./flowchart.md)
+- 🚀 [Deployment Guide](./DEPLOYMENT_GUIDE.md)
 
 ---
 
@@ -196,10 +211,11 @@ Follow the step-by-step `DEPLOYMENT_GUIDE.md` in this repo to deploy.
 
 Hi there! I’m **Dayle Cortes**, an American remote Full-Stack Software Engineer based in Florida.
 
-- 🔭 I’m currently deepening my expertise in Full-Stack Development **PERN**, **MERN**, and **Next.js**
+- 🔭 I'm currently deepening my expertise in Full-Stack Development **PERN**, **MERN**, and **Next.js**
 - 🌱 I love learning by doing coding-along with top instructors, then putting my own spin on projects to master every layer from database schema to production deployment.
+- 📚 I'm passionate about code documentation and believe that well-documented code is the foundation of maintainable software
 - 💼 Outside of coding, I love to cook and workout.
-- ⚡ Fun fact: I’m always trying to become a better version of myself than I was yesterday. Constantly learning with a growth mindset.
+- ⚡ Fun fact: I'm always trying to become a better version of myself than I was yesterday. Constantly learning with a growth mindset.
 
 ---
 

@@ -211,7 +211,7 @@ fly logs
 Your backend URL will be:
 
 ```
-https://dex-product-store-backend.fly.dev
+`https://your-app-name-backend.fly.dev
 ```
 
 ### 1.9 Test API endpoints
@@ -220,10 +220,10 @@ Browser or curl:
 
 ```bash
 # Health
-curl https://dex-product-store-backend.fly.dev/health
+curl https://your-app-name-backend.fly.dev/health
 
 # Products
-curl https://dex-product-store-backend.fly.dev/api/products
+curl https://your-app-name-backend.fly.dev/api/products
 ```
 
 Expected:
@@ -277,7 +277,7 @@ This repo already includes rewrites that forward `/api/*` to your Fly backend:
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://dex-product-store-backend.fly.dev/api/$1"
+      "destination": "https://your-app-name-backend.fly.dev/api/$1"
     }
   ],
   "headers": [
@@ -351,6 +351,6 @@ fly scale count 1           # scale to 1 instance (free tier)
 ## 🎉 Done!
 
 - **Frontend** (Vercel): your Vercel project URL
-- **Backend** (Fly): `https://dex-product-store-backend.fly.dev`
+- **Backend** (Fly): `https://your-app-name-backend.fly.dev`
 
 Push to GitHub to trigger Vercel redeploys. Re-run `fly deploy` when you update backend code or configuration.

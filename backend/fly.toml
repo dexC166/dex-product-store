@@ -1,9 +1,85 @@
+# =============================================================================
+# Fly.io Configuration for DEX Product Store Backend API
+# =============================================================================
+# 
+# This configuration file defines how the DEX Product Store backend API is
+# deployed and managed on Fly.io's cloud platform. It specifies the application
+# settings, scaling behavior, health monitoring, and resource allocation.
+#
+# Architecture Context:
+# - Backend API: Express.js server with PostgreSQL database
+# - Frontend: Separate React app deployed on Vercel
+# - Database: Neon PostgreSQL (serverless, external to Fly.io)
+# - Security: Arcjet middleware for rate limiting and bot detection
+#
+# Why Fly.io: Fly.io provides excellent support for containerized applications
+# with automatic scaling, global distribution, and cost-effective pricing for
+# small to medium applications. It's particularly well-suited for API services
+# that need to scale based on demand.
+
+# Application identification and deployment region
+# =============================================================================
+# 
+# Application Name: Unique identifier for this app on Fly.io platform
+# - Must be globally unique across all Fly.io applications
+# - Used for DNS resolution: https://dex-product-store-backend.fly.dev
+# - Cannot be changed after initial deployment
 app = "dex-product-store-backend"
+
+# Primary Region: Main deployment region for the application
+# - "iad" = Washington D.C. (US East) - good for US East Coast users
+# - Fly.io will deploy the primary instance in this region
+# - Additional regions can be added for global distribution
+# - Chosen for low latency to major US markets and cost efficiency
 primary_region = "iad"
 
+# Environment Variables
+# =============================================================================
+# 
+# These variables are injected into the container at runtime and are available
+# to the Express.js application via process.env.
+#
+# PORT Configuration:
+# - Fly.io requires applications to bind to the port specified here
+# - The Express server reads this via process.env.PORT (see server.js)
+# - Internal port 8080 maps to external HTTPS port 443
+# - This port is used for health checks and internal communication
 [env]
   PORT = "8080"
 
+# HTTP Service Configuration
+# =============================================================================
+# 
+# This section configures how Fly.io handles incoming HTTP traffic and manages
+# the application lifecycle. The settings are optimized for a cost-effective
+# API service that can scale based on demand.
+#
+# Port Configuration:
+# - internal_port: Port the Express server listens on inside the container
+# - External traffic is automatically routed to this port
+# - Must match the PORT environment variable above
+#
+# HTTPS Enforcement:
+# - force_https: Redirects all HTTP traffic to HTTPS
+# - Essential for API security and modern web standards
+# - Fly.io provides free SSL certificates automatically
+#
+# Auto-scaling Configuration (Cost Optimization):
+# - auto_stop_machines: Stops machines when no traffic (saves money)
+# - auto_start_machines: Starts machines when traffic arrives
+# - min_machines_running: 0 = can scale to zero (maximum cost savings)
+# - This is perfect for development/demo apps with intermittent traffic
+#
+# Why this scaling strategy: For a product store API that might have:
+# - Low traffic during development and testing
+# - Burst traffic during demos or peak usage
+# - Need for cost efficiency in early stages
+# - The ability to scale up when needed
+#
+# Process Configuration:
+# - processes: Defines the main application process
+# - "app" refers to the process defined in the Dockerfile CMD
+# - Single process configuration for this Express.js API
 [http_service]
   internal_port = 8080
   force_https = true
@@ -12,6 +88,32 @@ primary_region = "iad"
   min_machines_running = 0
   processes = ["app"]
 
+# Health Check Configuration
+# =============================================================================
+# 
+# Health checks are critical for production deployments. They allow Fly.io to:
+# - Monitor application health and responsiveness
+# - Automatically restart unhealthy instances
+# - Route traffic away from failing instances
+# - Provide visibility into application status
+#
+# Health Check Settings:
+# - grace_period: Time to wait before starting health checks (app startup time)
+# - interval: How often to check health (30s is reasonable for API)
+# - method: HTTP method for health check (GET is standard)
+# - timeout: Maximum time to wait for response (5s prevents hanging)
+# - path: Endpoint to check (/health is implemented in server.js)
+#
+# Health Check Endpoint Context:
+# - The /health endpoint is implemented in server.js
+# - Returns 200 OK with timestamp when application is healthy
+# - Does not require database connection (lightweight check)
+# - Used by both Fly.io and Docker health checks
+#
+# Why these settings: 30-second intervals provide good balance between:
+# - Responsiveness: Detects issues quickly enough
+# - Efficiency: Doesn't overwhelm the application with checks
+# - Cost: Reduces unnecessary load on the application
 [[http_service.checks]]
   grace_period = "10s"
   interval = "30s"
@@ -19,6 +121,35 @@ primary_region = "iad"
   timeout = "5s"
   path = "/health"
 
+# Virtual Machine Resource Allocation
+# =============================================================================
+# 
+# This section defines the compute resources allocated to each application instance.
+# The configuration is optimized for a lightweight API service with cost efficiency
+# as the primary concern.
+#
+# CPU Configuration:
+# - cpu_kind: "shared" = shared CPU cores (cost-effective for low-traffic apps)
+# - cpus: 1 = single CPU core per instance
+# - Shared CPUs are perfect for APIs that don't need constant high performance
+#
+# Memory Configuration:
+# - memory_mb: 512 = 512 MB RAM per instance
+# - Sufficient for Express.js + Node.js + dependencies
+# - Allows for reasonable request handling and database connections
+# - Can be increased if memory usage grows
+#
+# Why these resources: For a product store API with:
+# - Lightweight Express.js server
+# - External database (no local data storage)
+# - Simple CRUD operations
+# - Low to moderate traffic expectations
+# - Cost-conscious deployment strategy
+#
+# Resource Scaling: If the application grows, these can be increased:
+# - More CPUs for higher concurrent request handling
+# - More memory for larger datasets or caching
+# - Dedicated CPUs for consistent performance requirements
 [[vm]]
   cpu_kind = "shared"
   cpus = 1

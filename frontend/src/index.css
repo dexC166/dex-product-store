@@ -1,3 +1,139 @@
+/**
+ * =============================================================================
+ * DEX Product Store - Global CSS Styles
+ * =============================================================================
+ * 
+ * This file contains the global CSS styles for the DEX Product Store React
+ * application. It serves as the entry point for Tailwind CSS and DaisyUI
+ * styling, providing the foundation for all component styling throughout
+ * the application.
+ * 
+ * CSS Architecture:
+ * - Tailwind CSS: Utility-first CSS framework for rapid UI development
+ * - DaisyUI: Component library built on top of Tailwind CSS
+ * - PostCSS: CSS processing and optimization during build
+ * - Vite: Build tool that processes and bundles CSS
+ * 
+ * Why This Structure:
+ * - @tailwind base: Resets and base styles for consistent cross-browser rendering
+ * - @tailwind components: Reusable component classes and DaisyUI components
+ * - @tailwind utilities: Utility classes for rapid styling and responsive design
+ * 
+ * Integration with React:
+ * - Imported in main.jsx as the global CSS entry point
+ * - Processed by Vite during development and build
+ * - Available to all components through Tailwind's utility classes
+ * - DaisyUI themes are applied via data-theme attribute in App.jsx
+ * 
+ * Theme System:
+ * - 13 available themes defined in tailwind.config.js
+ * - Themes applied via data-theme attribute on root container
+ * - All DaisyUI components automatically inherit selected theme
+ * - Smooth transitions enabled with CSS transition classes
+ * 
+ * Build Process:
+ * - Vite processes this file during development and build
+ * - PostCSS processes Tailwind directives and generates utility classes
+ * - DaisyUI plugin adds component styles and theme variables
+ * - Final CSS is optimized and bundled for production
+ * 
+ * @author Dayle Cortes
+ * @version 1.0.0
+ * @see {@link ../main.jsx} CSS import in React entry point
+ * @see {@link ../tailwind.config.js} Tailwind and DaisyUI configuration
+ * @see {@link https://tailwindcss.com/} Tailwind CSS Documentation
+ * @see {@link https://daisyui.com/} DaisyUI Documentation
+ */
+
+/**
+ * Tailwind CSS Base Layer
+ * ========================
+ * 
+ * The @tailwind base directive includes Tailwind's base styles, which are
+ * a set of CSS resets and base styles that provide a consistent foundation
+ * across all browsers. This layer includes:
+ * 
+ * - CSS Reset: Normalizes default browser styles
+ * - Base Styles: Sets up consistent typography, spacing, and colors
+ * - Cross-browser Compatibility: Ensures consistent rendering across browsers
+ * - Accessibility: Includes focus styles and screen reader support
+ * 
+ * Why base layer: This provides a clean, consistent foundation for all
+ * components and ensures that styling works predictably across different
+ * browsers and devices. It's essential for the utility-first approach.
+ * 
+ * What it includes:
+ * - Modern CSS reset (similar to normalize.css)
+ * - Consistent box-sizing (border-box)
+ * - Typography base styles
+ * - Focus management for accessibility
+ * - Smooth scrolling behavior
+ */
 @tailwind base;
+
+/**
+ * Tailwind CSS Components Layer
+ * ==============================
+ * 
+ * The @tailwind components directive includes component-level styles,
+ * including DaisyUI's component library. This layer provides:
+ * 
+ * - DaisyUI Components: Pre-built components like buttons, cards, modals
+ * - Component Classes: Reusable styling patterns
+ * - Theme Integration: Components that work with DaisyUI's theming system
+ * - Custom Components: Any application-specific component styles
+ * 
+ * DaisyUI Integration:
+ * - Button components (btn, btn-primary, btn-ghost, etc.)
+ * - Card components (card, card-body, card-title, etc.)
+ * - Modal components (modal, modal-box, modal-backdrop, etc.)
+ * - Form components (input, label, form-control, etc.)
+ * - Navigation components (navbar, dropdown, etc.)
+ * - Utility components (loading, badge, alert, etc.)
+ * 
+ * Why components layer: This provides a rich set of pre-built components
+ * that work seamlessly with Tailwind's utility classes and DaisyUI's
+ * theming system. It accelerates development while maintaining consistency.
+ * 
+ * Theme Support:
+ * - All components automatically adapt to selected themes
+ * - Color schemes change based on data-theme attribute
+ * - Consistent styling across all theme variations
+ * - Smooth transitions between theme changes
+ */
 @tailwind components;
+
+/**
+ * Tailwind CSS Utilities Layer
+ * =============================
+ * 
+ * The @tailwind utilities directive includes all of Tailwind's utility
+ * classes. This is the main layer that provides the utility-first
+ * approach to styling. It includes:
+ * 
+ * - Layout Utilities: flexbox, grid, positioning, sizing
+ * - Spacing Utilities: margin, padding, gap, space
+ * - Typography Utilities: font size, weight, color, alignment
+ * - Color Utilities: background, text, border colors
+ * - Responsive Utilities: breakpoint-specific styling
+ * - State Utilities: hover, focus, active, disabled states
+ * - Animation Utilities: transitions, transforms, animations
+ * 
+ * Utility-First Approach:
+ * - Rapid prototyping and development
+ * - Consistent spacing and sizing scales
+ * - Responsive design with mobile-first approach
+ * - Easy maintenance and refactoring
+ * - Small bundle size through purging unused styles
+ * 
+ * Why utilities layer: This provides the core utility classes that
+ * enable rapid, consistent styling. Combined with DaisyUI components,
+ * it creates a powerful and flexible styling system.
+ * 
+ * Build Optimization:
+ * - Unused utilities are purged in production builds
+ * - Only used classes are included in final CSS bundle
+ * - Significant reduction in CSS bundle size
+ * - Better performance and loading times
+ */
 @tailwind utilities;
