@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://dex-product-store.vercel.app/" target="_blank">
-      <img src="./frontend/public/project-banner.png" alt="Project Banner">
+      <kbd><img src="./frontend/public/project-banner.png" alt="Project Banner"></kbd>
     </a>
   <br />
 
@@ -36,6 +36,7 @@ While I started this journey following the excellent teachings and guidance from
 ## 📑 Table of Contents
 
 - ✨ [Project Highlights](#project-highlight)
+- 🫚 [package.json (Root)](#packagejson-root)
 - 📁 [package.json (Backend)](#packagejson-backend)
 - 💻 [package.json (Frontend)](#packagejson-frontend)
 - 🚀 [Getting Started](#getting-started)
@@ -60,6 +61,40 @@ While I started this journey following the excellent teachings and guidance from
 - **`Beyond Tutorial Learning`**: Started with codesistency's guidance but evolved into my own unique implementation through experimentation and customization.
 - **`📚 Production-Ready Documentation`**: Comprehensive JSDoc comments throughout the entire codebase with mentoring tone, explaining the "why" behind every code decision.
 - **`🎓 Educational Codebase`**: Context-aware documentation that serves as a learning resource for understanding modern full-stack development patterns.
+
+---
+
+## <a name="packagejson-root">🫚 Root `package.json`</a>
+
+```json
+{
+  "name": "dex-product-store",
+  "version": "1.0.0",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js"
+  },
+  "keywords": [],
+  "type": "module",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "description": "",
+  "dependencies": {
+    "@arcjet/node": "^1.0.0-beta.1",
+    "@neondatabase/serverless": "^0.10.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
+```
 
 ---
 
