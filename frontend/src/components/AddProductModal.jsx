@@ -145,7 +145,7 @@ function AddProductModal() {
 
   return (
     <dialog id="add_product_modal" className="modal">
-      <div className="modal-box">
+      <div className="modal-box bg-base-100 text-base-content opacity-100 max-h-[90vh] overflow-y-auto">
         {/*
           Close Button
           =============
@@ -185,7 +185,7 @@ function AddProductModal() {
           Why this title: "Add New Product" clearly communicates
           the modal's purpose and the action the user is performing.
         */}
-        <h3 className="font-bold text-xl mb-8">Add New Product</h3>
+        <h3 className="font-bold text-xl mb-4">Add New Product</h3>
 
         {/*
           Product Creation Form
@@ -206,8 +206,8 @@ function AddProductModal() {
           form state is always in sync with the component state
           and provide predictable behavior for form handling.
         */}
-        <form onSubmit={addProduct} className="space-y-6">
-          <div className="grid gap-6">
+        <form onSubmit={addProduct} className="space-y-4">
+          <div className="grid gap-4">
             {/*
               Product Name Input
               ===================

@@ -156,7 +156,7 @@ function ThemeSelector() {
   const { theme, setTheme } = useThemeStore();
 
   return (
-    <div className="dropdown dropdown-end">
+    <div className="dropdown dropdown-end z-[100]">
       {/*
         Dropdown Trigger Button
         ========================
@@ -212,8 +212,8 @@ function ThemeSelector() {
       */}
       <div
         tabIndex={0}
-        className="dropdown-content mt-2 p-1 shadow-2xl bg-base-200 backdrop-blur-lg rounded-2xl
-        w-56 border border-base-content/10
+        className="dropdown-content z-[100] mt-2 p-1 shadow-2xl bg-base-100 text-base-content rounded-2xl
+        w-56 border border-base-content/20 max-h-[70vh] overflow-y-auto
         "
       >
         {/*

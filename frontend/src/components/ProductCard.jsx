@@ -162,7 +162,7 @@ function ProductCard({ product }) {
   const { deleteProduct } = useProductStore();
 
   return (
-    <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 relative z-0">
       {/*
         Product Image Display
         =====================
